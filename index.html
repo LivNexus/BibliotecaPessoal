@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibliotheca</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Menu lateral -->
+    <aside class="sidebar">
+        <div class="logo">
+            <span class="logo-icon">✧𐦉</span>
+            <h1>Biblioteca</h1>
+        </div>
+        <nav>
+            <p class="menu-title">BIBLIOTECA</p>
+            <a href="#" class="active">⌂ Início</a>
+            <a href="#">▤ Minha estante</a>
+            <a href="#">+ Adicionar livro</a>
+            <p class="menu-title">ORGANIZAÇÃO</p>
+            <a href="#">✧ Planejamento</a>
+            <a href="#">▧ Diário literário</a>
+            <a href="#">◷ Estatísticas</a>
+        </nav>
+    </aside>
+    <!-- Conteúdo principal -->
+    <main class="main-content">
+        <header class="topbar">
+            <div>
+                <h2>Bem-vindo à sua biblioteca.</h2>
+            </div>
+            <button class="add-button">+ Adicionar livro</button>
+        </header>
+        <!-- Resumo -->
+        <section class="summary">
+            <div class="summary-card">
+                <span>Livros cadastrados</span>
+                <strong>24</strong>
+            </div>
+            <div class="summary-card">
+                <span>Livros lidos</span>
+                <strong>12</strong>
+            </div>
+            <div class="summary-card">
+                <span>Em andamento</span>
+                <strong>3</strong>
+            </div>
+            <div class="summary-card">
+                <span>Quero ler</span>
+                <strong>9</strong>
+            </div>
+        </section>
+        <!-- Livros recentes -->
+        <section class="library-section">
+            <div class="section-heading">
+                <div>
+                    <h2>Minha estante</h2>
+                </div>
+            </div>
+            <!-- Categorias -->
+            <div class="filters">
+                <button class="filter active-filter">Todos</button>
+                <button class="filter">Lendo</button>
+                <button class="filter">Lidos</button>
+                <button class="filter">Quero ler</button>
+                <button class="filter">Abandonados</button>
+            </div>
+            <!-- Lista de livros -->
+            <div class="book-grid">
+                <article class="book-card">
+                    <div class="book-cover cover-one">
+                        <span>O RETRATO<br>DE DORIAN GRAY</span>
+                        <small>OSCAR WILDE</small>
+                    </div>
+                    <div class="book-info">
+                        <h3>O Retrato de Dorian Gray</h3>
+                        <p>Oscar Wilde</p>
+                        <span class="status reading">Lendo</span>
+                    </div>
+                </article>
+                <article class="book-card">
+                    <div class="book-cover cover-two">
+                        <span>PRÍNCIPE<br>CRUEL</span>
+                        <small>Holly Black</small>
+                    </div>
+                    <div class="book-info">
+                        <h3>Príncipe Cruel</h3>
+                        <p>Holly Black</p>
+                        <span class="status finished">Lido</span>
+                    </div>
+                </article>
+                <article class="book-card">
+                    <div class="book-cover cover-three">
+                        <span>ORGULHO<br>E PRECONCEITO</span>
+                        <small>JANE AUSTEN</small>
+                    </div>
+                    <div class="book-info">
+                        <h3>Orgulho e Preconceito</h3>
+                        <p>Jane Austen</p>
+                        <span class="status wishlist">Quero ler</span>
+                    </div>
+                </article>
+                <article class="book-card">
+                    <div class="book-cover cover-four">
+                        <span>HARRY POTTER</span>
+                        <small>J.K. ROWLING</small>
+                    </div>
+                    <div class="book-info">
+                        <h3>Harry Potter</h3>
+                        <p>J.K. Rowling</p>
+                        <span class="status finished">Lido</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
