@@ -1,0 +1,514 @@
+/* =====================================
+   PAINEL DE ACESSIBILIDADE
+===================================== */
+
+.accessibility-container {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 1000;
+    font-family: var(--font-textos);
+}
+
+.accessibility-button {
+    background-color: var(--verde);
+    color: var(--marfim);
+    border: 1px solid var(--dourado);
+    border-radius: 30px;
+    padding: 13px 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.accessibility-button:hover {
+    background-color: var(--oliva);
+}
+
+.accessibility-panel {
+    position: absolute;
+    right: 0;
+    bottom: 60px;
+    width: 270px;
+    max-width: calc(100vw - 30px);
+    padding: 22px;
+    background-color: #FFFAF0;
+    color: var(--ebano);
+    border: 1px solid var(--dourado);
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.accessibility-panel h2 {
+    font-family: var(--font-titulos);
+    font-size: 1.8rem;
+    color: var(--verde);
+    margin-bottom: 20px;
+}
+
+.accessibility-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.accessibility-group h3 {
+    font-family: var(--font-textos);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--vinho);
+}
+
+.accessibility-panel button:not(.accessibility-button) {
+    padding: 10px;
+    border: 1px solid #81765F;
+    border-radius: 6px;
+    background-color: #FFFAF0;
+    color: var(--ebano);
+    font-family: var(--font-textos);
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-align: left;
+    transition: background-color 0.2s ease;
+}
+
+.accessibility-panel button:hover {
+    background-color: #DCD2BE;
+}
+
+#restaurar-acessibilidade {
+    width: 100%;
+    background-color: var(--verde);
+    color: var(--marfim);
+    text-align: center;
+    font-weight: 600;
+}
+
+.accessibility-panel[hidden] {
+    display: none;
+}
+
+/* Foco visível no painel */
+
+.accessibility-button:focus-visible,
+.accessibility-panel button:focus-visible {
+    outline: 3px solid var(--vinho);
+    outline-offset: 3px;
+}
+
+/* Estado dos botões */
+
+.accessibility-panel button[aria-pressed="true"] {
+    background-color: var(--verde);
+    color: #FFFFFF;
+    border-color: var(--verde);
+    font-weight: 700;
+}
+
+
+/* =====================================
+   MODO ESCURO
+===================================== */
+
+body.dark-theme {
+    background-color: #1C211D;
+    color: #F2EBDD;
+}
+
+body.dark-theme .main-content {
+    background-color: #1C211D;
+    color: #F2EBDD;
+}
+
+/* Menu lateral */
+
+body.dark-theme .sidebar {
+    background-color: #151A16;
+    color: #F2EBDD;
+}
+
+body.dark-theme .sidebar nav a {
+    color: #E5E2D8;
+}
+
+body.dark-theme .sidebar nav a:hover,
+body.dark-theme .sidebar nav a.active {
+    background-color: #344238;
+    color: #FFFFFF;
+}
+
+/* Cabeçalhos */
+
+body.dark-theme .topbar,
+body.dark-theme .section-heading,
+body.dark-theme .welcome-section {
+    color: #F2EBDD;
+}
+
+body.dark-theme .topbar h1,
+body.dark-theme .topbar h2,
+body.dark-theme .section-heading h1,
+body.dark-theme .section-heading h2,
+body.dark-theme .welcome-section h1,
+body.dark-theme .welcome-section h2 {
+    color: #E5D5AF;
+}
+
+body.dark-theme .topbar p,
+body.dark-theme .section-heading p,
+body.dark-theme .welcome-section p {
+    color: #D0D5CA;
+}
+
+/* Cartões e informações dos livros */
+
+body.dark-theme .book-card,
+body.dark-theme .summary-card,
+body.dark-theme .planning-summary .summary-card {
+    background-color: #2B332D;
+    color: #F2EBDD;
+    border-color: #687767;
+}
+
+body.dark-theme .book-info h3,
+body.dark-theme .summary-card strong {
+    color: #E5D5AF;
+}
+
+body.dark-theme .book-info p,
+body.dark-theme .summary-card span {
+    color: #D0D5CA;
+}
+
+/* Filtros */
+
+body.dark-theme .filter {
+    background-color: #2B332D;
+    color: #F2EBDD;
+    border-color: #687767;
+}
+
+body.dark-theme .filter.active-filter {
+    background-color: #566448;
+    color: #FFFFFF;
+}
+
+/* Pesquisa e ordenação */
+
+body.dark-theme .library-controls label {
+    color: #F2EBDD;
+}
+
+body.dark-theme .library-controls input,
+body.dark-theme .library-controls select,
+body.dark-theme .year-selector select {
+    background-color: #222923;
+    color: #F2EBDD;
+    border-color: #899785;
+}
+
+body.dark-theme input::placeholder,
+body.dark-theme textarea::placeholder {
+    color: #C5CBBF;
+    opacity: 1;
+}
+
+/* Botões de edição e exclusão */
+
+body.dark-theme .edit-button {
+    background-color: #687D64;
+    color: #FFFFFF;
+}
+
+body.dark-theme .delete-button {
+    color: #F0B7B7;
+    border-color: #D18C8C;
+}
+
+/* Barra de progresso */
+
+body.dark-theme .progress-text,
+body.dark-theme .progress-percentage {
+    color: #D0D5CA;
+}
+
+body.dark-theme .progress-track {
+    background-color: #151A16;
+}
+
+body.dark-theme .progress-fill {
+    background-color: #A9BE91;
+}
+
+/* Planejamento */
+
+body.dark-theme .year-selector label {
+    color: #F2EBDD;
+}
+
+body.dark-theme .planning-summary .summary-card strong {
+    color: #E5D5AF;
+}
+
+/* Diário literário */
+
+body.dark-theme .diary-form-section form,
+body.dark-theme .diary-card {
+    background-color: #2B332D;
+    color: #F2EBDD;
+    border-color: #687767;
+}
+
+body.dark-theme .diary-card h3,
+body.dark-theme .diary-form-group label {
+    color: #E5D5AF;
+}
+
+body.dark-theme .diary-book,
+body.dark-theme .diary-date {
+    color: #D0D5CA;
+}
+
+body.dark-theme .diary-form-group input,
+body.dark-theme .diary-form-group select,
+body.dark-theme .diary-form-group textarea {
+    background-color: #222923;
+    color: #F2EBDD;
+    border-color: #899785;
+}
+
+body.dark-theme .diary-text {
+    color: #F2EBDD;
+}
+
+/* Setas do carrossel */
+
+body.dark-theme .carousel-arrow {
+    background-color: #566448;
+    color: #FFFFFF;
+}
+
+/* Painel de acessibilidade no modo escuro */
+
+body.dark-theme .accessibility-panel {
+    background-color: #2B332D;
+    color: #F2EBDD;
+    border-color: #BFA875;
+}
+
+body.dark-theme .accessibility-panel h2 {
+    color: #E5D5AF;
+}
+
+body.dark-theme .accessibility-group h3 {
+    color: #E5D5AF;
+}
+
+body.dark-theme .accessibility-panel button:not(.accessibility-button) {
+    background-color: #222923;
+    color: #F2EBDD;
+    border-color: #899785;
+}
+
+body.dark-theme .accessibility-panel button:hover {
+    background-color: #455448;
+}
+
+body.dark-theme #restaurar-acessibilidade {
+    background-color: #566448;
+    color: #FFFFFF;
+}
+
+/* Foco no modo escuro */
+
+body.dark-theme a:focus-visible,
+body.dark-theme button:focus-visible,
+body.dark-theme input:focus-visible,
+body.dark-theme select:focus-visible,
+body.dark-theme textarea:focus-visible {
+    outline: 3px solid #E5D5AF;
+    outline-offset: 3px;
+}
+
+
+/* =====================================
+   ALTO CONTRASTE
+===================================== */
+
+body.high-contrast {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+body.high-contrast .main-content {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+body.high-contrast .sidebar {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+body.high-contrast .sidebar nav a {
+    color: #FFFFFF;
+}
+
+body.high-contrast .sidebar nav a:hover,
+body.high-contrast .sidebar nav a.active {
+    background-color: #333333;
+    color: #FFFF00;
+}
+
+/* Textos */
+
+body.high-contrast .main-content p,
+body.high-contrast .main-content h1,
+body.high-contrast .main-content h2,
+body.high-contrast .main-content h3,
+body.high-contrast .main-content label,
+body.high-contrast .book-info p,
+body.high-contrast .book-info h3,
+body.high-contrast .summary-card span,
+body.high-contrast .summary-card strong {
+    color: #000000;
+}
+
+/* Cartões */
+
+body.high-contrast .book-card,
+body.high-contrast .summary-card,
+body.high-contrast .planning-summary .summary-card,
+body.high-contrast .diary-form-section form,
+body.high-contrast .diary-card {
+    background-color: #FFFFFF;
+    color: #000000;
+    border: 2px solid #000000;
+}
+
+/* Campos */
+
+body.high-contrast input,
+body.high-contrast select,
+body.high-contrast textarea {
+    background-color: #FFFFFF;
+    color: #000000;
+    border: 2px solid #000000;
+}
+
+body.high-contrast input::placeholder,
+body.high-contrast textarea::placeholder {
+    color: #333333;
+    opacity: 1;
+}
+
+/* Botões */
+
+body.high-contrast button,
+body.high-contrast .filter,
+body.high-contrast .carousel-arrow {
+    background-color: #000000;
+    color: #FFFFFF;
+    border: 2px solid #000000;
+}
+
+body.high-contrast button:hover,
+body.high-contrast .filter:hover {
+    background-color: #333333;
+    color: #FFFF00;
+}
+
+/* Barra de progresso */
+
+body.high-contrast .progress-track {
+    background-color: #FFFFFF;
+    border: 2px solid #000000;
+}
+
+body.high-contrast .progress-fill {
+    background-color: #000000;
+}
+
+/* Painel de acessibilidade */
+
+body.high-contrast .accessibility-panel {
+    background-color: #FFFFFF;
+    color: #000000;
+    border: 2px solid #000000;
+}
+
+body.high-contrast .accessibility-panel h2,
+body.high-contrast .accessibility-group h3 {
+    color: #000000;
+}
+
+body.high-contrast .accessibility-panel button:not(.accessibility-button) {
+    background-color: #FFFFFF;
+    color: #000000;
+    border: 2px solid #000000;
+}
+
+body.high-contrast #restaurar-acessibilidade {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+/* Foco de alto contraste */
+
+body.high-contrast a:focus-visible,
+body.high-contrast button:focus-visible,
+body.high-contrast input:focus-visible,
+body.high-contrast select:focus-visible,
+body.high-contrast textarea:focus-visible {
+    outline: 4px solid #0000FF;
+    outline-offset: 3px;
+}
+
+/* Estado ativo dos controles */
+
+body.high-contrast .accessibility-panel button[aria-pressed="true"] {
+    background-color: #000000;
+    color: #FFFF00;
+    border: 2px solid #000000;
+}
+
+
+/* =====================================
+   MOVIMENTO REDUZIDO
+===================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+/* =====================================
+   RESPONSIVIDADE
+===================================== */
+
+@media (max-width: 600px) {
+    .accessibility-container {
+        right: 15px;
+        bottom: 15px;
+    }
+
+    .accessibility-button {
+        padding: 11px 15px;
+        font-size: 0.875rem;
+    }
+
+    .accessibility-panel {
+        width: 250px;
+        padding: 18px;
+    }
+}

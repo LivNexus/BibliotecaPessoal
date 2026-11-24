@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Planejamento de leitura | Bibliotheca Athenae</title>
+
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/acessibilidade.css">
+
+</head>
+
+<body>
+
+    <!-- Menu lateral -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <span class="logo-icon">✧𐦉</span>
+            <h1>Biblioteca</h1>
+        </div>
+
+        <nav>
+
+            <p class="menu-title">BIBLIOTECA</p>
+
+            <a href="../index.html">Início</a>
+            <a href="estante.html">Minha estante</a>
+            <a href="adicionar.html">Adicionar livro</a>
+            <a href="planejamento.html" class="active">Planejamento</a>
+            <a href="diario.html">Diário literário</a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- Conteúdo principal -->
+    <main class="main-content">
+
+        <!-- Cabeçalho -->
+        <header class="topbar">
+
+            <div>
+                <h2>Planejamento de leitura</h2>
+                <p>Organize suas próximas jornadas literárias.</p>
+            </div>
+
+            <a href="adicionar.html" class="add-button">
+                + Adicionar livro
+            </a>
+
+        </header>
+
+
+        <!-- Introdução -->
+        <section class="welcome-section">
+
+            <h2>Uma página de cada vez.</h2>
+
+            <p>
+                Planejar uma leitura é também abrir espaço para novas
+                descobertas. Organize suas obras e acompanhe seus objetivos.
+            </p>
+
+        </section>
+
+
+        <!-- Planejamento -->
+        <section class="planning-section">
+
+            <!-- Seleção de ano -->
+            <div class="section-heading">
+
+                <h2>Meu planejamento</h2>
+
+                <p>Selecione o ano que deseja consultar.</p>
+
+            </div>
+
+
+            <div class="year-selector">
+
+                <label for="ano-selecionado">
+                    Ano de leitura
+                </label>
+
+                <select id="ano-selecionado">
+
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    <option value="2028">2028</option>
+                    <option value="2029">2029</option>
+                    <option value="2030">2030</option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Resumo -->
+            <div class="planning-summary">
+
+                <article class="summary-card">
+
+                    <span>Livros planejados</span>
+
+                    <strong id="total-planejados">0</strong>
+
+                </article>
+
+
+                <article class="summary-card">
+
+                    <span>Concluídos</span>
+
+                    <strong id="total-concluidos">0</strong>
+
+                </article>
+
+
+                <article class="summary-card">
+
+                    <span>Em andamento</span>
+
+                    <strong id="total-andamento">0</strong>
+
+                </article>
+
+            </div>
+
+
+            <!-- Lista de livros -->
+            <div class="section-heading">
+
+                <h2>Minhas leituras do ano</h2>
+
+                <p>
+                    Obras que fazem parte do seu percurso literário.
+                </p>
+
+            </div>
+
+
+            <div class="book-grid" id="livros-planejados">
+
+                <!-- Os livros serão inseridos pelo JavaScript -->
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Painel de acessibilidade -->
+    <div class="accessibility-container">
+
+        <button
+            type="button"
+            id="botao-acessibilidade"
+            class="accessibility-button"
+            aria-label="Abrir opções de acessibilidade"
+            aria-expanded="false"
+            aria-controls="painel-acessibilidade">
+
+            ⚙ Acessibilidade
+
+        </button>
+
+
+        <section
+            id="painel-acessibilidade"
+            class="accessibility-panel"
+            aria-label="Opções de acessibilidade"
+            hidden>
+
+            <h2>Acessibilidade</h2>
+
+
+            <div class="accessibility-group">
+
+                <h3>Aparência</h3>
+
+                <button type="button" id="modo-claro">
+                    ☀ Modo claro
+                </button>
+
+                <button type="button" id="modo-escuro">
+                    ☾ Modo escuro
+                </button>
+
+            </div>
+
+
+            <div class="accessibility-group">
+
+                <h3>Tamanho da fonte</h3>
+
+                <button type="button" id="diminuir-fonte">
+                    A− Diminuir
+                </button>
+
+                <button type="button" id="aumentar-fonte">
+                    A+ Aumentar
+                </button>
+
+            </div>
+
+
+            <div class="accessibility-group">
+
+                <h3>Contraste</h3>
+
+                <button type="button" id="alto-contraste">
+                    Alto contraste
+                </button>
+
+            </div>
+
+
+            <button type="button" id="restaurar-acessibilidade">
+                Restaurar configurações
+            </button>
+
+        </section>
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="../js/storage.js"></script>
+    <script src="../js/livros.js"></script>
+    <script src="../js/planejamento.js"></script>
+    <script src="../js/acessibilidade.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Diário Literário | Bibliotheca Athenae</title>
+
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/acessibilidade.css">
+
+</head>
+
+<body>
+
+    <!-- Menu lateral -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <span class="logo-icon">✧𐦉</span>
+            <h1>Biblioteca</h1>
+        </div>
+
+        <nav>
+            <p class="menu-title">BIBLIOTECA</p>
+
+            <a href="../index.html">Início</a>
+            <a href="estante.html">Minha estante</a>
+            <a href="adicionar.html">Adicionar livro</a>
+            <a href="planejamento.html">Planejamento</a>
+            <a href="diario.html" class="active">Diário literário</a>
+        </nav>
+
+    </aside>
+
+    <!-- Conteúdo principal -->
+    <main class="main-content">
+
+        <!-- Cabeçalho -->
+        <header class="topbar">
+
+            <div>
+                <h2>Diário Literário</h2>
+                <p>Palavras, pensamentos e histórias que permanecem.</p>
+            </div>
+
+        </header>
+
+        <!-- Apresentação -->
+        <section class="library-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Um espaço para suas reflexões</h2>
+
+                    <p>
+                        Nem toda leitura termina na última página.
+                        Registre suas impressões, pensamentos e passagens
+                        marcantes ao longo de suas jornadas literárias.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Formulário -->
+        <section class="diary-form-section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Nova anotação</h2>
+                    <p>Registre os pensamentos que suas leituras despertam.</p>
+                </div>
+            </div>
+
+            <form id="form-diario">
+
+                <div class="diary-form-group">
+
+                    <label for="livro-diario">Livro relacionado</label>
+
+                    <select id="livro-diario" required>
+                        <option value="">Selecione um livro</option>
+                    </select>
+
+                </div>
+
+                <div class="diary-form-group">
+
+                    <label for="titulo-anotacao">Título da anotação</label>
+
+                    <input
+                        type="text"
+                        id="titulo-anotacao"
+                        placeholder="Ex.: Uma reflexão sobre a personagem..."
+                        required
+                    >
+
+                </div>
+
+                <div class="diary-form-group">
+
+                    <label for="data-anotacao">Data</label>
+
+                    <input
+                        type="date"
+                        id="data-anotacao"
+                        required
+                    >
+
+                </div>
+
+                <div class="diary-form-group">
+
+                    <label for="texto-anotacao">Sua anotação</label>
+
+                    <textarea
+                        id="texto-anotacao"
+                        rows="6"
+                        placeholder="Escreva suas impressões, pensamentos ou passagens que marcaram sua leitura..."
+                        required
+                    ></textarea>
+
+                </div>
+
+                <button type="submit" class="add-button">
+                    Salvar anotação
+                </button>
+
+            </form>
+
+        </section>
+
+        <!-- Histórico de anotações -->
+        <section class="diary-history-section">
+
+            <div class="section-heading diary-section-header">
+
+                <div>
+                    <h2>Minhas anotações</h2>
+                    <p>Suas reflexões e memórias literárias.</p>
+                </div>
+
+                <button
+                    type="button"
+                    id="alternar-visualizacao"
+                    class="filter"
+                    hidden
+                >
+                    Ver tudo
+                </button>
+
+            </div>
+
+            <!-- Carrossel -->
+            <div class="diary-carousel">
+
+                <button
+                    type="button"
+                    id="anotacao-anterior"
+                    class="carousel-arrow"
+                    aria-label="Anotação anterior"
+                    hidden
+                >
+                    &#10094;
+                </button>
+
+                <div class="diary-carousel-viewport">
+
+                    <div id="lista-anotacoes" class="diary-carousel-track">
+
+                        <p class="empty-message">
+                            Suas anotações aparecerão aqui.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <button
+                    type="button"
+                    id="proxima-anotacao"
+                    class="carousel-arrow"
+                    aria-label="Próxima anotação"
+                    hidden
+                >
+                    &#10095;
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+<!-- Painel de acessibilidade -->
+<div class="accessibility-container">
+
+    <button
+        type="button"
+        id="botao-acessibilidade"
+        class="accessibility-button"
+        aria-label="Abrir opções de acessibilidade"
+        aria-expanded="false"
+        aria-controls="painel-acessibilidade">
+
+        ⚙ Acessibilidade
+
+    </button>
+
+    <section
+        id="painel-acessibilidade"
+        class="accessibility-panel"
+        aria-label="Opções de acessibilidade"
+        hidden>
+
+        <h2>Acessibilidade</h2>
+
+        <div class="accessibility-group">
+
+            <h3>Aparência</h3>
+
+            <button type="button" id="modo-claro">
+                ☀ Modo claro
+            </button>
+
+            <button type="button" id="modo-escuro">
+                ☾ Modo escuro
+            </button>
+
+        </div>
+
+        <div class="accessibility-group">
+
+            <h3>Tamanho da fonte</h3>
+
+            <button type="button" id="diminuir-fonte">
+                A− Diminuir
+            </button>
+
+            <button type="button" id="aumentar-fonte">
+                A+ Aumentar
+            </button>
+
+        </div>
+
+        <div class="accessibility-group">
+
+            <h3>Contraste</h3>
+
+            <button type="button" id="alto-contraste">
+                Alto contraste
+            </button>
+
+        </div>
+
+        <button type="button" id="restaurar-acessibilidade">
+            Restaurar configurações
+        </button>
+
+    </section>
+
+</div>
+    <!-- JavaScript -->
+    <script src="../js/storage.js"></script>
+    <script src="../js/livros.js"></script>
+    <script src="../js/acessibilidade.js"></script>
+    <script src="../js/diario.js"></script>
+    <script src=".../js/acessibilidade.js"></script>
+
+</body>
+</html>

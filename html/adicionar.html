@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Adicionar livro | Bibliotheca Athenae</title>
+
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/acessibilidade.css">
+
+</head>
+
+<body>
+
+    <!-- Menu lateral -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <span class="logo-icon">✧𐦉</span>
+            <h1>Biblioteca</h1>
+        </div>
+
+        <nav>
+            <p class="menu-title">BIBLIOTECA</p>
+
+            <a href="../index.html">Início</a>
+            <a href="estante.html">Minha estante</a>
+            <a href="adicionar.html" class="active">Adicionar livro</a>
+            <a href="planejamento.html">Planejamento</a>
+            <a href="diario.html">Diário literário</a>
+        </nav>
+
+    </aside>
+
+    <!-- Conteúdo principal -->
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div>
+                <h2>Adicionar à biblioteca</h2>
+                <p>Registre uma nova obra em sua coleção.</p>
+            </div>
+
+            <a href="../index.html" class="add-button">
+                Voltar à biblioteca
+            </a>
+
+        </header>
+
+        <!-- Formulário -->
+        <section class="form-section">
+
+            <div class="section-heading">
+                <h2>Nova obra</h2>
+                <p>Preencha as informações do livro.</p>
+            </div>
+
+            <form id="form-livro">
+
+                <div class="form-group">
+
+                    <label for="titulo">Título do livro *</label>
+
+                    <input
+                        type="text"
+                        id="titulo"
+                        name="titulo"
+                        placeholder="Ex.: O Retrato de Dorian Gray"
+                        required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="autor">Autor</label>
+
+                    <input
+                        type="text"
+                        id="autor"
+                        name="autor"
+                        placeholder="Nome do autor">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="genero">Gênero literário</label>
+
+                    <select id="genero" name="genero">
+
+                        <option value="">Selecione um gênero</option>
+                        <option value="Fantasia">Fantasia</option>
+                        <option value="Ficção">Ficção</option>
+                        <option value="Ficção gótica">Ficção gótica</option>
+                        <option value="Romance">Romance</option>
+                        <option value="Mistério">Mistério</option>
+                        <option value="Terror">Terror</option>
+                        <option value="Suspense">Suspense</option>
+                        <option value="Clássico">Clássico</option>
+                        <option value="Ficção científica">Ficção científica</option>
+                        <option value="Não ficção">Não ficção</option>
+                        <option value="Outro">Outro</option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="paginas">Número de páginas</label>
+
+                        <input
+                            type="number"
+                            id="paginas"
+                            name="paginas"
+                            min="1"
+                            placeholder="Ex.: 320">
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="paginaAtual">Página atual</label>
+
+                        <input
+                            type="number"
+                            id="paginaAtual"
+                            name="paginaAtual"
+                            min="0"
+                            value="0">
+
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="status">Status de leitura</label>
+
+                        <select id="status" name="status">
+
+                            <option value="Quero ler">Quero ler</option>
+                            <option value="Lendo">Lendo</option>
+                            <option value="Lido">Lido</option>
+                            <option value="Pausado">Pausado</option>
+                            <option value="Abandonado">Abandonado</option>
+                            <option value="Relendo">Relendo</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="anoPlanejado">Ano planejado</label>
+
+                        <input
+                            type="number"
+                            id="anoPlanejado"
+                            name="anoPlanejado"
+                            min="2000"
+                            max="2100"
+                            placeholder="Ex.: 2027">
+
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="avaliacao">Avaliação (0 a 5)</label>
+
+                    <select id="avaliacao" name="avaliacao">
+
+                        <option value="0">Sem avaliação</option>
+                        <option value="1">1 estrela</option>
+                        <option value="2">2 estrelas</option>
+                        <option value="3">3 estrelas</option>
+                        <option value="4">4 estrelas</option>
+                        <option value="5">5 estrelas</option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="resenha">Anotações ou resenha</label>
+
+                    <textarea
+                        id="resenha"
+                        name="resenha"
+                        rows="5"
+                        placeholder="Registre suas primeiras impressões sobre a obra..."></textarea>
+
+                </div>
+
+                <div class="form-actions">
+
+                    <button type="reset" class="cancel-button">
+                        Limpar formulário
+                    </button>
+
+                    <button type="submit" class="add-button">
+                        Cadastrar livro
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <!-- PAINEL DE ACESSIBILIDADE -->
+    <div class="accessibility-container">
+
+        <button
+            type="button"
+            id="botao-acessibilidade"
+            class="accessibility-button"
+            aria-label="Abrir opções de acessibilidade"
+            aria-expanded="false"
+            aria-controls="painel-acessibilidade">
+            ⚙ Acessibilidade
+        </button>
+
+        <section
+            id="painel-acessibilidade"
+            class="accessibility-panel"
+            aria-label="Opções de acessibilidade"
+            hidden>
+
+            <h2>Acessibilidade</h2>
+
+            <div class="accessibility-group">
+                <h3>Aparência</h3>
+
+                <button type="button" id="modo-claro">
+                    ☀ Modo claro
+                </button>
+
+                <button type="button" id="modo-escuro">
+                    ☾ Modo escuro
+                </button>
+            </div>
+
+            <div class="accessibility-group">
+                <h3>Tamanho da fonte</h3>
+
+                <button type="button" id="diminuir-fonte">
+                    A− Diminuir
+                </button>
+
+                <button type="button" id="aumentar-fonte">
+                    A+ Aumentar
+                </button>
+            </div>
+
+            <div class="accessibility-group">
+                <h3>Contraste</h3>
+
+                <button type="button" id="alto-contraste">
+                    Alto contraste
+                </button>
+            </div>
+
+            <button type="button" id="restaurar-acessibilidade">
+                Restaurar configurações
+            </button>
+
+        </section>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script src="../js/storage.js"></script>
+    <script src="../js/livros.js"></script>
+    <script src="../js/adicionar.js"></script>
+    <script src="../js/acessibilidade.js"></script>
+
+</body>
+</html>

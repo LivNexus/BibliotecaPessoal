@@ -1,0 +1,339 @@
+/* =========================================
+   BIBLIOTHECA ATHENAE - TELA DE LOGIN
+========================================= */
+
+/* Variáveis visuais */
+:root {
+    --login-green: #293D32;
+    --login-olive: #566448;
+    --login-wine: #633B40;
+    --login-ivory: #EEE7D8;
+    --login-gold: #BFA875;
+    --login-ebony: #282823;
+}
+
+/* Estrutura geral */
+
+.login-page {
+    min-height: 100vh;
+    margin: 0;
+    background:
+        linear-gradient(rgba(20, 32, 25, 0.88), rgba(20, 32, 25, 0.94)),
+        radial-gradient(circle at top, #566448, #293D32 65%);
+    color: var(--login-ebony);
+    font-family: "Inter", sans-serif;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px 20px;
+}
+
+/* Container */
+
+.login-container {
+    width: 100%;
+    max-width: 480px;
+    margin: auto;
+}
+
+/* Cartão principal */
+
+.login-card {
+    background-color: var(--login-ivory);
+    padding: 45px 50px;
+    border: 1px solid var(--login-gold);
+    border-radius: 5px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.35),
+        inset 0 0 30px rgba(191, 168, 117, 0.08);
+}
+
+/* Cabeçalho */
+
+.login-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.login-emblem {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 15px;
+
+    border: 1px solid var(--login-gold);
+    border-radius: 50%;
+
+    color: var(--login-gold);
+    background-color: var(--login-green);
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2rem;
+}
+
+.login-header h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+
+    color: var(--login-green);
+    margin-bottom: 5px;
+}
+
+.login-motto {
+    color: var(--login-wine);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+.login-divider {
+    color: var(--login-gold);
+    font-size: 1.8rem;
+    margin: 15px 0;
+}
+
+.login-header h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--login-ebony);
+    margin-bottom: 8px;
+}
+
+.login-description {
+    color: #69665E;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Formulário */
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    color: var(--login-green);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.login-form .form-control {
+    width: 100%;
+    padding: 12px 14px;
+
+    border: 1px solid #C9BFA9;
+    border-radius: 3px;
+
+    background-color: #F8F4EB;
+    color: var(--login-ebony);
+
+    font-family: "Inter", sans-serif;
+    font-size: 0.9rem;
+
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.login-form .form-control:focus {
+    border-color: var(--login-olive);
+
+    box-shadow: 0 0 0 3px rgba(86, 100, 72, 0.18);
+
+    outline: none;
+}
+
+/* Campo de senha */
+
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-container input {
+    padding-right: 85px;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 10px;
+
+    border: none;
+    background: transparent;
+
+    color: var(--login-olive);
+    font-size: 0.8rem;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.password-toggle:hover {
+    color: var(--login-wine);
+    text-decoration: underline;
+}
+
+/* Manter sessão */
+
+.login-options {
+    display: flex;
+    align-items: center;
+}
+
+.remember-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #69665E;
+    font-size: 0.85rem;
+
+    cursor: pointer;
+}
+
+.remember-option input {
+    accent-color: var(--login-green);
+    cursor: pointer;
+}
+
+/* Mensagens */
+
+.login-message {
+    display: none;
+
+    padding: 10px 12px;
+    border-radius: 3px;
+
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.login-message.error {
+    display: block;
+    color: #842029;
+    background-color: #F8D7DA;
+    border: 1px solid #F1AEB5;
+}
+
+.login-message.success {
+    display: block;
+    color: #0F5132;
+    background-color: #D1E7DD;
+    border: 1px solid #A3CFBB;
+}
+
+/* Botão de entrar */
+
+.login-button {
+    width: 100%;
+    padding: 13px;
+
+    border: 1px solid var(--login-gold);
+    border-radius: 3px;
+
+    background-color: var(--login-green);
+    color: var(--login-ivory);
+
+    font-family: "Inter", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.login-button:hover {
+    background-color: var(--login-olive);
+    transform: translateY(-2px);
+}
+
+.login-button:focus-visible,
+.password-toggle:focus-visible {
+    outline: 3px solid var(--login-wine);
+    outline-offset: 3px;
+}
+
+/* Rodapé */
+
+.login-footer {
+    margin-top: 30px;
+    padding-top: 20px;
+
+    border-top: 1px solid #D5CBB8;
+
+    text-align: center;
+}
+
+.login-footer p {
+    color: #69665E;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1rem;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.login-footer span {
+    color: var(--login-olive);
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+}
+
+/* =========================================
+   RESPONSIVIDADE
+========================================= */
+
+@media (max-width: 576px) {
+
+    .login-page {
+        padding: 25px 15px;
+    }
+
+    .login-card {
+        padding: 35px 25px;
+    }
+
+    .login-header h1 {
+        font-size: 2rem;
+    }
+
+    .login-header h2 {
+        font-size: 1.5rem;
+    }
+
+}
+
+/* =========================================
+   ACESSIBILIDADE
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .login-button,
+    .login-form .form-control {
+        transition: none;
+    }
+
+    .login-button:hover {
+        transform: none;
+    }
+
+}

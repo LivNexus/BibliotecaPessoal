@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Minha estante | Bibliotheca Athenae</title>
+
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/acessibilidade.css">
+
+</head>
+
+<body>
+
+    <!-- Menu lateral -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <span class="logo-icon">✧𐦉</span>
+            <h1>Biblioteca</h1>
+        </div>
+
+        <nav>
+            <p class="menu-title">BIBLIOTECA</p>
+
+            <a href="../index.html">Início</a>
+            <a href="estante.html" class="active">Minha estante</a>
+            <a href="adicionar.html">Adicionar livro</a>
+            <a href="planejamento.html">Planejamento</a>
+            <a href="diario.html">Diário literário</a>
+        </nav>
+
+    </aside>
+
+    <!-- Conteúdo principal -->
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div>
+                <h2>Minha estante</h2>
+                <p>Um espaço para organizar suas leituras e descobertas.</p>
+            </div>
+
+            <a href="adicionar.html" class="add-button">
+                + Adicionar livro
+            </a>
+
+        </header>
+
+        <!-- Biblioteca -->
+        <section class="library-section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Minha coleção</h2>
+                    <p>Todos os livros registrados na sua biblioteca.</p>
+                </div>
+            </div>
+
+            <!-- Filtros por status -->
+            <div class="filters" aria-label="Filtrar livros por status">
+
+                <button type="button" class="filter active-filter" data-status="todos">
+                    Todos
+                </button>
+
+                <button type="button" class="filter" data-status="Lendo">
+                    Lendo
+                </button>
+
+                <button type="button" class="filter" data-status="Lidos">
+                    Lidos
+                </button>
+
+                <button type="button" class="filter" data-status="Quero ler">
+                    Quero ler
+                </button>
+
+                <button type="button" class="filter" data-status="Abandonados">
+                    Abandonados
+                </button>
+
+                <button type="button" class="filter" data-status="Pausados">
+                    Pausados
+                </button>
+
+                <button type="button" class="filter" data-status="Relendo">
+                    Relendo
+                </button>
+
+            </div>
+
+            <!-- Pesquisa e ordenação -->
+            <div class="library-controls">
+
+                <div class="search-box">
+
+                    <label for="pesquisa-livro">
+                        Pesquisar livros
+                    </label>
+
+                    <input
+                        type="search"
+                        id="pesquisa-livro"
+                        placeholder="Buscar por título ou autor..."
+                        autocomplete="off">
+
+                </div>
+
+                <div class="sort-box">
+
+                    <label for="ordenar-livros">
+                        Ordenar por
+                    </label>
+
+                    <select id="ordenar-livros">
+
+                        <option value="cadastro">Ordem de cadastro</option>
+                        <option value="titulo">Título (A-Z)</option>
+                        <option value="autor">Autor (A-Z)</option>
+                        <option value="avaliacao">Maior avaliação</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <!-- Livros cadastrados -->
+            <div class="book-grid" id="book-grid">
+
+                <!-- Os livros serão inseridos pelo JavaScript -->
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- PAINEL DE ACESSIBILIDADE -->
+    <div class="accessibility-container">
+
+        <button
+            type="button"
+            id="botao-acessibilidade"
+            class="accessibility-button"
+            aria-label="Abrir opções de acessibilidade"
+            aria-expanded="false"
+            aria-controls="painel-acessibilidade">
+            ⚙ Acessibilidade
+        </button>
+
+        <section
+            id="painel-acessibilidade"
+            class="accessibility-panel"
+            aria-label="Opções de acessibilidade"
+            hidden>
+
+            <h2>Acessibilidade</h2>
+
+            <div class="accessibility-group">
+                <h3>Aparência</h3>
+
+                <button type="button" id="modo-claro">
+                    ☀ Modo claro
+                </button>
+
+                <button type="button" id="modo-escuro">
+                    ☾ Modo escuro
+                </button>
+            </div>
+
+            <div class="accessibility-group">
+                <h3>Tamanho da fonte</h3>
+
+                <button type="button" id="diminuir-fonte">
+                    A− Diminuir
+                </button>
+
+                <button type="button" id="aumentar-fonte">
+                    A+ Aumentar
+                </button>
+            </div>
+
+            <div class="accessibility-group">
+                <h3>Contraste</h3>
+
+                <button type="button" id="alto-contraste">
+                    Alto contraste
+                </button>
+            </div>
+
+            <button type="button" id="restaurar-acessibilidade">
+                Restaurar configurações
+            </button>
+
+        </section>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script src="../js/storage.js"></script>
+    <script src="../js/livros.js"></script>
+    <script src="../js/estante.js"></script>
+    <script src="../js/acessibilidade.js"></script>
+
+</body>
+</html>
